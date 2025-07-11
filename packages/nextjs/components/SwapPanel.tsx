@@ -1,9 +1,10 @@
 "use client";
-
-import { useSimpleswap } from "~~/hooks/useSimpleswap";
+const amount = "1000000000000000000"; // 1 token con 18 decimales (1 * 10^18 wei)
+const swapFromTokenA = true;
+import { useSimpleswap } from "~~/hooks/scaffold-eth/useSimpleswap";
 
 export const SwapPanel = () => {
-  const { swap, priceAinB } = useSimpleswap();
+  const { swap, priceAinB } = useSimpleswap(amount, swapFromTokenA);
 
   return (
     <div className="p-4 border rounded-lg max-w-md mx-auto">
